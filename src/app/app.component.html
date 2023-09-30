@@ -12,13 +12,11 @@
               ngModel
               name="usernameField"
               required
+              #userName="ngModel"
             />
             <span
               class="help-block"
-              *ngIf="
-                form.form.controls.usernameField.invalid &&
-                form.form.controls.usernameField.touched
-              "
+              *ngIf="userName.invalid && userName.touched"
               >Please enter a username</span
             >
           </div>
@@ -35,13 +33,11 @@
               name="emailField"
               required
               email
+              #emailAddress="ngModel"
             />
             <span
               class="help-block"
-              *ngIf="
-                form.form.controls.emailField.invalid &&
-                form.form.controls.emailField.touched
-              "
+              *ngIf="emailAddress.invalid && emailAddress.touched"
               >Please enter a valid email</span
             >
           </div>
