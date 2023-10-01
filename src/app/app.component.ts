@@ -11,12 +11,18 @@ export class AppComponent {
   defaultQuestion = 'pet';
   answer = '';
   genders = ['male', 'female'];
-  suggestUserName() {
-    const suggestedName = 'Superuser';
-  }
 
   onSubmitForm() {
     //console.log('Form Submitted!!', form);
     console.log(this.formElement);
+  }
+
+  onSuggestUserName() {
+    const suggestedName = 'Superuser';
+    this.formElement.form.patchValue({
+      userData: {
+        usernameField: suggestedName,
+      },
+    });
   }
 }
