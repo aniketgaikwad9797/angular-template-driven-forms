@@ -24,8 +24,10 @@ export class AppComponent {
     this.submitted = true;
     //console.log('Form Submitted!!', form);
     console.log(this.formElement);
-    this.userInformation.userName = this.formElement.value.userData.usernameField;
-    this.userInformation.emailAddress = this.formElement.value.userData.emailField;
+    this.userInformation.userName =
+      this.formElement.value.userData.usernameField;
+    this.userInformation.emailAddress =
+      this.formElement.value.userData.emailField;
     this.userInformation.secretQuestion = this.formElement.value.secretField;
     this.userInformation.questionAnswer = this.formElement.value.qAField;
     this.userInformation.gender = this.formElement.value.genderField;
@@ -39,5 +41,9 @@ export class AppComponent {
         usernameField: suggestedName,
       },
     });
+  }
+
+  onFormReset() {
+    this.formElement.reset();
   }
 }
